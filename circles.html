@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+</body>
+
+
+<script>
+let but1 = document.createElement("button");
+but1.innerHTML = "start";
+but1.setAttribute('style',' border-radius: 30%; font-size: 15px; padding: 10px; margin: 4px; background-color: yellow;left: 0px; top: 300px; position:fixed');
+let body = document.getElementsByTagName("body")[0];
+body.appendChild(but1);
+//second
+let  but2 = document.createElement("button");
+but2.innerHTML = "stop";
+but2.setAttribute('style',' border-radius:30%;font-size: 15px;padding: 10px; margin: 4px; background-color:yellow;left: 100px; top: 300px; position:fixed');
+// let body = document.getElementsByTagName("body")[0];
+body.appendChild(but2);
+let div_1=document.createElement("div");
+div_1.setAttribute('style',' border-radius: 50%; width: 200px; height: 200px; font-size: 15px; padding: 10px; margin: 4px; background-color: blue ; position: absolute');
+// let body = document.getElementsByTagName("body")[0];
+body.appendChild(div_1);
+let div_2=document.createElement("div");
+div_2.setAttribute('style',' border-radius: 50%; width: 50px; height: 50px; font-size: 15px; padding: 10px; margin: 4px; background-color: red ;left: 185px; top: 100px; position:absolute');
+// let body = document.getElementsByTagName("body")[0];
+body.appendChild(div_2);
+let Bx = 82;
+let By = 76;
+let Sx;
+let Sy;
+let alpha = 0;
+let elem;
+but1.onclick = rotate = () => {
+	console.log(123456);
+    alpha += 12;
+    Sx = Bx+100* Math.cos(alpha*3.14/180);
+	Sy = By+100* Math.sin(alpha*3.14/180);
+	console.log( Math.cos(alpha*3.14/180));
+	console.log(Sx);
+	console.log(Sy);
+	div_2.style.left = Sx + 'px';
+    div_2.style.top = Sy + 'px';
+    if(alpha > 360){
+        alpha =0;
+    }
+    elem =setTimeout(rotate,100);
+}
+but2.onclick = stop = () =>{
+    console.log(elem);
+    elem = clearTimeout(elem);
+}
+
+</script>
+</html>
